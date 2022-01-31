@@ -1,0 +1,19 @@
+Lombok
+	@Data
+	@Builder
+	@SuperBuilder
+	@AllArgsCnstructor
+	@NoArgsConstructor
+Criando primeira API com Spring MVC e Gradle no Spring Initializr
+Criar API conectando em um banco Mongo DB com Spring Data
+(https://start.spring.io/)
+	Desenvolver 1 operação de cadastro (POST)
+	Desenvolver 1 operação de atualização (PUT)
+	Desenvolver 1 operação de busca (GET)
+	Desenvolver 1 operação de delete (DELETE)
+	Desenvolver 1 operação de delete que exclua objetos por um ou mais id
+	Desenvolver 1 operação que receba um Cookie simples
+	Tratar erros com @ExceptionHandlers
+	Versionamento de contratos
+	Serialização e desserialização de datas com Jackson no formato ISO
+	https://www.baeldung.com/spring-boot-formatting-json-dates

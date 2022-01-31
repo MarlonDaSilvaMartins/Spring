@@ -1,0 +1,41 @@
+ Sprint 03 =
+		*Lombok(http://stevenmwesigwa.com/tutorials/project-lombok/1/introduction-to-project-lombok)
+			[ ]@Data
+			[ ]@Builder
+			[ ]@SuperBuilder
+			[ ]@AllArgsCnstructor
+			[ ]@NoArgsConstructor
+		*[ ]Criando primeira API com Spring MVC e Gradle no Spring Initializr
+		*[ ]Criar API conectando em um banco Mongo DB com Spring Data
+		 (https://start.spring.io/)
+			[ ]Desenvolver 1 operação de cadastro (POST)
+			[ ]Desenvolver 1 operação de atualização (PUT)
+			[ ]Desenvolver 1 operação de busca (GET)
+			[ ]Desenvolver 1 operação de delete (DELETE)
+			[ ]Desenvolver 1 operação de delete que exclua objetos por um ou mais id
+			[ ]Desenvolver 1 operação que receba um Cookie simples
+			[ ]Tratar erros com @ExceptionHandlers
+			[ ]Versionamento de contratos
+			[ ]Serialização e desserialização de datas com Jackson no formato ISO
+			[ ]https://www.baeldung.com/spring-boot-formatting-json-dates
+
+
+stevenmwesigwa.com
+Introduction To Project Lombok
+Project Lombok is a Java library that will be plugged into your code editor which automatically generates Java boilerplate byte code for you based on a couple of annotations.
+	http://stevenmwesigwa.com/tutorials/project-lombok/1/introduction-to-project-lombok
+Baeldung
+Formatting JSON Dates in Spring Boot | Baeldung
+Explore a number of different ways to format JSON dates in a Spring Boot application.
+20 fev, 2019
+	https://www.baeldung.com/spring-boot-formatting-json-dates
+stevenmwesigwa.comstevenmwesigwa.com
+Introduction To Project Lombok
+Project Lombok is a Java library that will be plugged into your code editor which automatically generates Java boilerplate byte code for you based on a couple of annotations. (396 kB)
+http://stevenmwesigwa.com/tutorials/project-lombok/1/introduction-to-project-lombok
+
+BaeldungBaeldung
+Formatting JSON Dates in Spring Boot | Baeldung
+Explore a number of different ways to format JSON dates in a Spring Boot application.
+20 fev, 2019 (117 kB)
+
