@@ -1,10 +1,10 @@
-package com.Teste.main;
+package br.com.livraria.springteste;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class MainApplicationTests {
+class SpringtesteApplicationTests {
 
 	@Test
 	void contextLoads() {

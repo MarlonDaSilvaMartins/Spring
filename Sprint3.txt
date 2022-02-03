@@ -5,7 +5,7 @@
 			[ ]@SuperBuilder
 			[ ]@AllArgsCnstructor
 			[ ]@NoArgsConstructor
-		*[ ]Criando primeira API com Spring MVC e Gradle no Spring Initializr
+		*[x]Criando primeira API com Spring MVC e Gradle no Spring Initializr
 		*[ ]Criar API conectando em um banco Mongo DB com Spring Data
 		 (https://start.spring.io/)
 			[ ]Desenvolver 1 operação de cadastro (POST)
