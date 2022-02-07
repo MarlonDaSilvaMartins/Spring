@@ -22,16 +22,21 @@ public class LivroService{
         return livroRepository.findById(id).get();
     }
 
-    public Livro salvarOuAtualizar(Livro livro){
+    public Livro salvar(Livro livro){
         return livroRepository.save(livro);
-
     }
 
-    public void deletar(String id){
-        livroRepository.deleteById(id);
+    public void deletar(String livroId){
+        livroRepository.deleteById(livroId);
     }
 
-    public void atualizar(Livro livro,String livroId){
-        livroRepository.save(livro);
+    public void deletarMaisDeUm(Livro[] livro){
+        for(Livro livro1 : livro){
+            livroRepository.deleteById(livro1.getLivroId());
+        }
+    }
+
+    public Livro atualizar(Livro livro){
+        return livroRepository.save(livro);
     }
 }

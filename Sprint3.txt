@@ -8,34 +8,32 @@
 		*[x]Criando primeira API com Spring MVC e Gradle no Spring Initializr
 		*[ ]Criar API conectando em um banco Mongo DB com Spring Data
 		 (https://start.spring.io/)
-			[ ]Desenvolver 1 operação de cadastro (POST)
+			[x]Desenvolver 1 operação de cadastro (POST)
 			[ ]Desenvolver 1 operação de atualização (PUT)
-			[ ]Desenvolver 1 operação de busca (GET)
-			[ ]Desenvolver 1 operação de delete (DELETE)
-			[ ]Desenvolver 1 operação de delete que exclua objetos por um ou mais id
+			[x]Desenvolver 1 operação de busca (GET)
+			[x]Desenvolver 1 operação de delete (DELETE)
+			[x]Desenvolver 1 operação de delete que exclua objetos por um ou mais id
 			[ ]Desenvolver 1 operação que receba um Cookie simples
 			[ ]Tratar erros com @ExceptionHandlers
 			[ ]Versionamento de contratos
 			[ ]Serialização e desserialização de datas com Jackson no formato ISO
 			[ ]https://www.baeldung.com/spring-boot-formatting-json-dates
 
-
-stevenmwesigwa.com
-Introduction To Project Lombok
-Project Lombok is a Java library that will be plugged into your code editor which automatically generates Java boilerplate byte code for you based on a couple of annotations.
-	http://stevenmwesigwa.com/tutorials/project-lombok/1/introduction-to-project-lombok
-Baeldung
-Formatting JSON Dates in Spring Boot | Baeldung
-Explore a number of different ways to format JSON dates in a Spring Boot application.
-20 fev, 2019
-	https://www.baeldung.com/spring-boot-formatting-json-dates
-stevenmwesigwa.comstevenmwesigwa.com
-Introduction To Project Lombok
-Project Lombok is a Java library that will be plugged into your code editor which automatically generates Java boilerplate byte code for you based on a couple of annotations. (396 kB)
+Lombok
+http://stevenmwesigwa.com/tutorials/project-lombok/3/how-to-use-getter-and-setter-annotations-with-project-lombok
 http://stevenmwesigwa.com/tutorials/project-lombok/1/introduction-to-project-lombok
 
-BaeldungBaeldung
+Spring CRUD operations
+https://www.javatpoint.com/spring-boot-crud-operations
+https://roytuts.com/spring-boot-mongodb-crud-example/
+https://www.technicalkeeda.com/spring-tutorials/spring-4-mongodb-repository-example
+
+spring package
+https://i.stack.imgur.com/i4xnP.png
+Baeldung
 Formatting JSON Dates in Spring Boot | Baeldung
-Explore a number of different ways to format JSON dates in a Spring Boot application.
-20 fev, 2019 (117 kB)
+	https://www.baeldung.com/spring-boot-formatting-json-dates
+
+
+
 

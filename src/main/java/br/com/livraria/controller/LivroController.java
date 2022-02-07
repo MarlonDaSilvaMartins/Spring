@@ -26,14 +26,19 @@ public class LivroController {
         livroService.deletar(livroId);
     }
 
-    @PostMapping("/livro")
-    public Livro salvarLivro(@RequestBody Livro livro){
-       return livroService.salvarOuAtualizar(livro);
+    @DeleteMapping("/livro")
+    public void deletarMaisDeUmLivro(@RequestBody Livro[] livro){
+        livroService.deletarMaisDeUm(livro);
     }
 
-    @PutMapping("/livro")
-    public Livro update(@RequestBody Livro livro){
-        livroService.salvarOuAtualizar(livro);
-        return livro;
+    @PostMapping("/livro")
+    public Livro salvarLivro(@RequestBody Livro livro){
+       return livroService.salvar(livro);
+    }
+
+    @PutMapping("/livro/{livroId}")
+    public Livro update(@PathVariable("livroId") String livroId, @RequestBody Livro livro){
+        livro.setLivroId(livroId);
+        return livroService.atualizar(livro);
     }
 }
