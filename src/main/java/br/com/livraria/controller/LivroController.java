@@ -41,4 +41,10 @@ public class LivroController {
         livro.setLivroId(livroId);
         return livroService.atualizar(livro);
     }
+
+    @PatchMapping("/livro/{livroId}")
+    public Livro updateParcial(@PathVariable("livroId") String livroId, @RequestBody Livro livro){
+        livro.setLivroId(livroId);
+        return livroService.atualizar(livro);
+    }
 }

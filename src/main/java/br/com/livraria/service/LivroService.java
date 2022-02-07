@@ -2,6 +2,8 @@ package br.com.livraria.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import br.com.livraria.model.Livro;
@@ -37,6 +39,19 @@ public class LivroService{
     }
 
     public Livro atualizar(Livro livro){
-        return livroRepository.save(livro);
+        Livro livro1 = livroRepository.findById(livro.getLivroId()).get();
+        var nome = Optional.ofNullable(livro.getNome());
+        if(nome.isPresent()){
+            livro1.setNome(nome.get());
+        }
+        var autor = Optional.ofNullable(livro.getAutor());
+        if(autor.isPresent()){
+            livro1.setAutor(autor.get());
+        }
+        var preco = Optional.ofNullable(livro.getPreco());
+        if(preco.isPresent()){
+            livro1.setPreco(preco.get());
+        }
+        return livroRepository.save(livro1);
     }
 }

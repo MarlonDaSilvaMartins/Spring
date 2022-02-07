@@ -9,7 +9,7 @@
 		*[ ]Criar API conectando em um banco Mongo DB com Spring Data
 		 (https://start.spring.io/)
 			[x]Desenvolver 1 operação de cadastro (POST)
-			[ ]Desenvolver 1 operação de atualização (PUT)
+			[x, ]Desenvolver 1 operação de atualização (PUT,PATCH)
 			[x]Desenvolver 1 operação de busca (GET)
 			[x]Desenvolver 1 operação de delete (DELETE)
 			[x]Desenvolver 1 operação de delete que exclua objetos por um ou mais id
