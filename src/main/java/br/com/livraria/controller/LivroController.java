@@ -21,19 +21,9 @@ public class LivroController {
         return livroService.getLivroById(livroId);
     }
 
-    @DeleteMapping("/livro/{livroId}")
-    public void deletarLivro(@PathVariable("livroId") String livroId){
-        livroService.deletar(livroId);
-    }
-
-    @DeleteMapping("/livro")
-    public void deletarMaisDeUmLivro(@RequestBody Livro[] livro){
-        livroService.deletarMaisDeUm(livro);
-    }
-
     @PostMapping("/livro")
     public Livro salvarLivro(@RequestBody Livro livro){
-       return livroService.salvar(livro);
+        return livroService.salvar(livro);
     }
 
     @PutMapping("/livro/{livroId}")
@@ -47,4 +37,19 @@ public class LivroController {
         livro.setLivroId(livroId);
         return livroService.atualizar(livro);
     }
-}
+
+    @DeleteMapping("/livro/{livroId}")
+    public void deletarLivro(@PathVariable("livroId") String livroId){
+        livroService.deletar(livroId);
+    }
+
+    @DeleteMapping("/livro")
+    public void deletarMaisDeUmLivro(@RequestBody Livro[] livro){
+        livroService.deletarMaisDeUm(livro);
+    }
+
+    @GetMapping("/cookie")
+    public String lerCookie(@CookieValue("nome")String nome){
+        return livroService.lerCookie(nome);
+    }
+}//livroController

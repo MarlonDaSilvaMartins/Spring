@@ -28,16 +28,6 @@ public class LivroService{
         return livroRepository.save(livro);
     }
 
-    public void deletar(String livroId){
-        livroRepository.deleteById(livroId);
-    }
-
-    public void deletarMaisDeUm(Livro[] livro){
-        for(Livro livro1 : livro){
-            livroRepository.deleteById(livro1.getLivroId());
-        }
-    }
-
     public Livro atualizar(Livro livro){
         Livro livro1 = livroRepository.findById(livro.getLivroId()).get();
         var nome = Optional.ofNullable(livro.getNome());
@@ -54,4 +44,18 @@ public class LivroService{
         }
         return livroRepository.save(livro1);
     }
-}
+
+    public void deletar(String livroId){
+        livroRepository.deleteById(livroId);
+    }
+
+    public void deletarMaisDeUm(Livro[] livro){
+        for(Livro livro1 : livro){
+            livroRepository.deleteById(livro1.getLivroId());
+        }
+    }
+
+    public String lerCookie(String nome){
+        return "Meu nome é " + nome;
+    }
+}//livroService
