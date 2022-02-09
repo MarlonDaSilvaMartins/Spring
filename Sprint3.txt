@@ -15,10 +15,12 @@
 			[x]Desenvolver 1 operação de delete (DELETE)
 			[x]Desenvolver 1 operação de delete que exclua objetos por um ou mais id
 			[?]Desenvolver 1 operação que receba um Cookie simples
-			[ ]Tratar erros com @ExceptionHandlers
+			[?]Tratar erros com @ExceptionHandlers
 			[ ]Versionamento de contratos
 			[ ]Serialização e desserialização de datas com Jackson no formato ISO
 			[ ]https://www.baeldung.com/spring-boot-formatting-json-dates
+
+			[ ] Acessos por referencia e copia.
 
 Lombok
 http://stevenmwesigwa.com/tutorials/project-lombok/3/how-to-use-getter-and-setter-annotations-with-project-lombok
@@ -33,12 +35,12 @@ https://roytuts.com/spring-boot-mongodb-crud-example/
 https://www.technicalkeeda.com/spring-tutorials/spring-4-mongodb-repository-example
 
 ExceptionHandlers
+https://springframework.guru/exception-handling-in-spring-boot-rest-api/
 https://reflectoring.io/spring-boot-exception-handling/
 https://auth0.com/blog/get-started-with-custom-error-handling-in-spring-boot-java/
 
 ResponseEntity
 https://www.baeldung.com/spring-response-entity
-https://www.toptal.com/java/spring-boot-rest-api-error-handling
 https://www.toptal.com/java/spring-boot-rest-api-error-handling
 https://www.tutorialspoint.com/spring_boot/spring_boot_exception_handling.htm
 https://reflectoring.io/spring-boot-exception-handling/

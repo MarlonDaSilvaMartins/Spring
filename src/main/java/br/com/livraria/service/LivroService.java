@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import br.com.livraria.error.DataNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import br.com.livraria.model.Livro;
@@ -20,8 +21,15 @@ public class LivroService{
         return livro;
     }
 
-    public Livro getLivroById(String id){
-        return livroRepository.findById(id).get();
+    public Livro getLivroById(String livroId){
+        Livro livro;
+        if(livroRepository.findById(livroId).isEmpty()){
+
+            throw new DataNotFoundException("Valor pesquisado não foi encontrado");
+        }else{
+            livro = livroRepository.findById(livroId).get();
+        }
+        return livro;
     }
 
     public Livro salvar(Livro livro){
@@ -58,4 +66,5 @@ public class LivroService{
     public String lerCookie(String nome){
         return "Meu nome é " + nome;
     }
+
 }//livroService

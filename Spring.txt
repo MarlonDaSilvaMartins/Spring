@@ -7,6 +7,8 @@ Lombok
 Criando primeira API com Spring MVC e Gradle no Spring Initializr
 Criar API conectando em um banco Mongo DB com Spring Data
 (https://start.spring.io/)
+    @AutoWired
+    @ControllerAdvice
 	Desenvolver 1 operação de cadastro (POST)
 	Desenvolver 1 operação de atualização (PUT)
 	Desenvolver 1 operação de busca (GET)

@@ -16,7 +16,7 @@ public class LivroController {
         return livroService.pegarTodosLivros();
     }
 
-    @GetMapping("/livro/{livroId}")
+    @GetMapping("/livro/{livroId}")//sem Exception
     public Livro pegarLivro(@PathVariable("livroId") String livroId){
         return livroService.getLivroById(livroId);
     }
