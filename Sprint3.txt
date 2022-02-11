@@ -16,11 +16,14 @@
 			[x]Desenvolver 1 operação de delete que exclua objetos por um ou mais id
 			[?]Desenvolver 1 operação que receba um Cookie simples
 			[?]Tratar erros com @ExceptionHandlers
-			[ ]Versionamento de contratos
+			[?]Versionamento de contratos
 			[ ]Serialização e desserialização de datas com Jackson no formato ISO
 			[ ]https://www.baeldung.com/spring-boot-formatting-json-dates
 
+			pesquisar sobre DTO
+
 			[ ] Acessos por referencia e copia.
+			[ ] Try with resource
 
 Lombok
 http://stevenmwesigwa.com/tutorials/project-lombok/3/how-to-use-getter-and-setter-annotations-with-project-lombok
@@ -34,6 +37,13 @@ https://spring.io/guides/gs/accessing-data-mongodb/
 https://roytuts.com/spring-boot-mongodb-crud-example/
 https://www.technicalkeeda.com/spring-tutorials/spring-4-mongodb-repository-example
 
+DTO
+https://marioalvial.medium.com/blindando-sua-api-spring-boot-com-o-padr%C3%A3o-dto-44f97020d1a0
+https://www.baeldung.com/java-dto-pattern
+https://www.baeldung.com/entity-to-and-from-dto-for-a-java-spring-application
+https://www.javaguides.net/2021/02/spring-boot-dto-example-entity-to-dto.html
+https://wkrzywiec.medium.com/how-to-create-restful-crud-application-with-spring-boot-even-faster-389e5ff00c88
+
 ExceptionHandlers
 https://springframework.guru/exception-handling-in-spring-boot-rest-api/
 https://reflectoring.io/spring-boot-exception-handling/
@@ -46,14 +56,21 @@ https://www.tutorialspoint.com/spring_boot/spring_boot_exception_handling.htm
 https://reflectoring.io/spring-boot-exception-handling/
 https://auth0.com/blog/get-started-with-custom-error-handling-in-spring-boot-java/
 
+Versionamento de contratos
+https://www.infoq.com/br/news/2016/07/web-api-versioning/
+https://pt.slideshare.net/DanielChristofolli/soa-x-microservices-e-versionamento-de-contrato-de-api
+https://pt.slideshare.net/ViniciusMarquesPulga/apresentao-java-soa-microservice-http-https-versionamento-de-contrato
+https://www.javatpoint.com/restful-web-services-versioning
+https://dzone.com/articles/versioning-rest-api-with-spring-boot-and-swagger
+
 spring package
 https://i.stack.imgur.com/i4xnP.png
 
 Formatting JSON Dates in Spring Boot | Baeldung
 	https://www.baeldung.com/spring-boot-formatting-json-dates
 
-lofi
-https://www.youtube.com/watch?v=gnZImHvA0ME&ab_channel=LofiGirl
+	rinaldodev
+
 
 
 

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import br.com.livraria.controller.LivroRequest;
 import br.com.livraria.error.DataNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,6 +16,10 @@ public class LivroService{
     @Autowired
     LivroRepository livroRepository;
 
+    public Livro salvar(Livro livro){
+        return livroRepository.save(livro);
+    }
+
     public List<Livro> pegarTodosLivros(){
         List<Livro> livro = new ArrayList<Livro>();
         livroRepository.findAll().forEach(livro1 -> livro.add(livro1));
@@ -22,44 +27,24 @@ public class LivroService{
     }
 
     public Livro getLivroById(String livroId){
-        Livro livro;
-        if(livroRepository.findById(livroId).isEmpty()){
-
-            throw new DataNotFoundException("Valor pesquisado não foi encontrado");
-        }else{
-            livro = livroRepository.findById(livroId).get();
-        }
-        return livro;
+        livroRepository.findById(livroId).orElseThrow(() -> new DataNotFoundException("Valor pesquisado não foi encontrado!"));
+        return livroRepository.findById(livroId).get();
     }
 
-    public Livro salvar(Livro livro){
-        return livroRepository.save(livro);
-    }
-
-    public Livro atualizar(Livro livro){
-        Livro livro1 = livroRepository.findById(livro.getLivroId()).get();
-        var nome = Optional.ofNullable(livro.getNome());
-        if(nome.isPresent()){
-            livro1.setNome(nome.get());
-        }
-        var autor = Optional.ofNullable(livro.getAutor());
-        if(autor.isPresent()){
-            livro1.setAutor(autor.get());
-        }
-        var preco = Optional.ofNullable(livro.getPreco());
-        if(preco.isPresent()){
-            livro1.setPreco(preco.get());
-        }
-        return livroRepository.save(livro1);
+    public Livro atualizar(String livroId, Livro livro){
+        livroRepository.findById(livroId).orElseThrow(() -> new DataNotFoundException("Valor pesquisado não foi encontrado!"));
+        return livroRepository.save(livroRepository.findById(livro.getLivroId()).get());
     }
 
     public void deletar(String livroId){
+        livroRepository.findById(livroId).orElseThrow(() -> new DataNotFoundException("Valor pesquisado não foi encontrado!"));
         livroRepository.deleteById(livroId);
     }
 
-    public void deletarMaisDeUm(Livro[] livro){
-        for(Livro livro1 : livro){
-            livroRepository.deleteById(livro1.getLivroId());
+    public void deletarMaisDeUm(List<String> livro){
+        for(String livroId : livro){
+            livroRepository.findById(livroId).orElseThrow(() -> new DataNotFoundException("Valor pesquisado não foi encontrado!"));
+            livroRepository.deleteById(livroId);
         }
     }
 

@@ -21,8 +21,13 @@ public class CustomControllerAdvice {
         return new ResponseEntity<>(new ErrorResponse(status,exception.getMessage(),stackTrace),status);
     }
 
+    @ExceptionHandler(NullPointerException.class)
+    public ResponseEntity<ErrorResponse> camposEmBrancoException(Exception exception){
+        return new ResponseEntity<>(new ErrorResponse(HttpStatus.BAD_REQUEST, exception.getMessage()),HttpStatus.BAD_REQUEST);
+    }
+
     @ExceptionHandler(Exception.class)
-    public ResponseEntity<ErrorResponse> FalhaConexaoBancoException(Exception exception){
+    public ResponseEntity<ErrorResponse> falhaConexaoBancoException(Exception exception){
         return new ResponseEntity<>(new ErrorResponse(HttpStatus.INTERNAL_SERVER_ERROR,"Falha ao conectar"),HttpStatus.INTERNAL_SERVER_ERROR);
     }
 }
