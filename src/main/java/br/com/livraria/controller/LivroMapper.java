@@ -10,4 +10,12 @@ public class LivroMapper {
                 .preco(livroRequest.getPreco())
                 .build();
     }
+
+    public static LivroRequest livroToRequest(Livro livro){
+        return LivroRequest.builder()
+                .nome(livro.getNome())
+                .autor(livro.getAutor())
+                .preco(livro.getPreco())
+                .build();
+    }
 }

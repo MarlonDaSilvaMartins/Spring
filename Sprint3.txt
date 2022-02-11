@@ -10,13 +10,13 @@
 		 (https://start.spring.io/)
 			[x]Desenvolver 1 operação de cadastro (POST)
 			[x]Desenvolver 1 operação de atualização (PUT)
-			[?]Desenvolver 1 operação de atualização (PATCH)
+			[x]Desenvolver 1 operação de atualização (PATCH)
 			[x]Desenvolver 1 operação de busca (GET)
 			[x]Desenvolver 1 operação de delete (DELETE)
 			[x]Desenvolver 1 operação de delete que exclua objetos por um ou mais id
-			[?]Desenvolver 1 operação que receba um Cookie simples
+			[x]Desenvolver 1 operação que receba um Cookie simples
 			[?]Tratar erros com @ExceptionHandlers
-			[?]Versionamento de contratos
+			[x]Versionamento de contratos
 			[ ]Serialização e desserialização de datas com Jackson no formato ISO
 			[ ]https://www.baeldung.com/spring-boot-formatting-json-dates
 

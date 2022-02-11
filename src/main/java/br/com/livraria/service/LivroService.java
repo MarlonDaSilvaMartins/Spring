@@ -22,13 +22,16 @@ public class LivroService{
 
     public List<Livro> pegarTodosLivros(){
         List<Livro> livro = new ArrayList<Livro>();
-        livroRepository.findAll().forEach(livro1 -> livro.add(livro1));
-        return livro;
+        return livroRepository.findAll();
     }
 
     public Livro getLivroById(String livroId){
         livroRepository.findById(livroId).orElseThrow(() -> new DataNotFoundException("Valor pesquisado não foi encontrado!"));
         return livroRepository.findById(livroId).get();
+    }
+
+    public List<Livro> pegarTodosLivrosId(){
+        return livroRepository.findAll();
     }
 
     public Livro atualizar(String livroId, Livro livro){

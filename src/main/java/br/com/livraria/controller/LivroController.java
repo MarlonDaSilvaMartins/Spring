@@ -1,6 +1,7 @@
 package br.com.livraria.controller;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -20,13 +21,18 @@ public class LivroController {
     }
 
     @GetMapping("/v1/livro")
-    public List<Livro>pegarTodosLivros(){
-        return livroService.pegarTodosLivros();
+    public List<LivroRequest>pegarTodosLivros(){
+        return livroService.pegarTodosLivros().stream().map(livro -> LivroMapper.livroToRequest(livro)).collect(Collectors.toList());
     }
 
     @GetMapping("/v1/livro/{livroId}")
-    public Livro pegarLivro(@PathVariable("livroId") String livroId){
-        return livroService.getLivroById(livroId);
+    public LivroRequest pegarLivro(@PathVariable("livroId") String livroId){
+        return LivroMapper.livroToRequest(livroService.getLivroById(livroId));
+    }
+
+    @GetMapping("/v1/livroid")
+    public List<Livro>pegarTodosLivrosId(){
+        return livroService.pegarTodosLivrosId();
     }
 
     @PutMapping("/v1/livro/{livroId}")
