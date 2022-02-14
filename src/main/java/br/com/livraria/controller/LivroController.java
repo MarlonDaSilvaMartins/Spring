@@ -41,8 +41,8 @@ public class LivroController {
     }
 
     @PatchMapping("/v1/livro/{livroId}")
-    public Livro updateParcial(@PathVariable("livroId") String livroId, @Valid @RequestBody LivroRequest livro){
-        return livroService.atualizar(livroId,LivroMapper.mapperToImpl(livro));
+    public Livro updateParcial(@PathVariable("livroId") String livroId, @RequestBody Livro livro){
+        return livroService.atualizar(livroId,livro);
     }
 
     @DeleteMapping("/v1/livro/{livroId}")
@@ -51,7 +51,7 @@ public class LivroController {
     }
 
     @DeleteMapping("/v1/livro")
-    public void deletarMaisDeUmLivro(@RequestBody List<String> livroId){
+    public void deletarMaisDeUmLivro(@RequestParam("livroId") List<String> livroId){
         livroService.deletarMaisDeUm(livroId);
     }
 

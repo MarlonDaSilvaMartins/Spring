@@ -22,8 +22,10 @@
 
 			pesquisar sobre DTO
 
-			[ ] Acessos por referencia e copia.
+			[?] Acessos por referencia e copia.
 			[x] Try with resource
+
+			patch sem utilizar livroRequest?
 
 Lombok
 http://stevenmwesigwa.com/tutorials/project-lombok/3/how-to-use-getter-and-setter-annotations-with-project-lombok
@@ -67,7 +69,7 @@ spring package
 https://i.stack.imgur.com/i4xnP.png
 
 Formatting JSON Dates in Spring Boot | Baeldung
-	https://www.baeldung.com/spring-boot-formatting-json-dates
+https://www.baeldung.com/spring-boot-formatting-json-dates
 
 	rinaldodev
 

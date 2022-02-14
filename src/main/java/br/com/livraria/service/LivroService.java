@@ -1,6 +1,5 @@
 package br.com.livraria.service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import br.com.livraria.error.DataNotFoundException;
@@ -19,7 +18,6 @@ public class LivroService{
     }
 
     public List<Livro> pegarTodosLivros(){
-        List<Livro> livro = new ArrayList<Livro>();
         return livroRepository.findAll();
     }
 
@@ -33,8 +31,11 @@ public class LivroService{
     }
 
     public Livro atualizar(String livroId, Livro livro){
-        livroRepository.findById(livroId).orElseThrow(() -> new DataNotFoundException("Valor pesquisado não foi encontrado!"));
-        return livroRepository.save(livroRepository.findById(livro.getLivroId()).get());
+        Livro livroUpdate = livroRepository.findById(livroId).orElseThrow(() -> new DataNotFoundException("Valor pesquisado não foi encontrado!"));
+        //Double preco = livro.getPreco().isNaN() ? livroUpdate.getPreco() : livro.getPreco();
+        double preco = livro.getPreco();
+        livroUpdate.setPreco(preco);
+        return livroRepository.save(livroUpdate);
     }
 
     public void deletar(String livroId){
@@ -44,7 +45,7 @@ public class LivroService{
 
     public void deletarMaisDeUm(List<String> livro){
         for(String livroId : livro){
-            livroRepository.findById(livroId).orElseThrow(() -> new DataNotFoundException("Valor pesquisado não foi encontrado!"));
+            livroRepository.findById(livroId).orElseThrow(() -> new DataNotFoundException("Valor "+livroId+" não foi encontrado!"));
             livroRepository.deleteById(livroId);
         }
     }
