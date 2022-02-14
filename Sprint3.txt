@@ -1,10 +1,10 @@
  Sprint 03 =
 		*Lombok(http://stevenmwesigwa.com/tutorials/project-lombok/1/introduction-to-project-lombok)
-			[ ]@Data
-			[ ]@Builder
-			[ ]@SuperBuilder
-			[ ]@AllArgsCnstructor
-			[ ]@NoArgsConstructor
+			[x]@Data
+			[x]@Builder
+			[x]@SuperBuilder
+			[x]@AllArgsCnstructor
+			[x]@NoArgsConstructor
 		*[x]Criando primeira API com Spring MVC e Gradle no Spring Initializr
 		*[x]Criar API conectando em um banco Mongo DB com Spring Data
 		 (https://start.spring.io/)
@@ -17,13 +17,13 @@
 			[x]Desenvolver 1 operação que receba um Cookie simples
 			[?]Tratar erros com @ExceptionHandlers
 			[x]Versionamento de contratos
-			[ ]Serialização e desserialização de datas com Jackson no formato ISO
+			[x]Serialização e desserialização de datas com Jackson no formato ISO
 			[x]https://www.baeldung.com/spring-boot-formatting-json-dates
 
 			pesquisar sobre DTO
 
 			[ ] Acessos por referencia e copia.
-			[ ] Try with resource
+			[x] Try with resource
 
 Lombok
 http://stevenmwesigwa.com/tutorials/project-lombok/3/how-to-use-getter-and-setter-annotations-with-project-lombok

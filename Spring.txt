@@ -1,14 +1,19 @@
-Lombok
-	@Data
-	@Builder
-	@SuperBuilder
-	@AllArgsCnstructor
-	@NoArgsConstructor
-Criando primeira API com Spring MVC e Gradle no Spring Initializr
-Criar API conectando em um banco Mongo DB com Spring Data
-(https://start.spring.io/)
-    @AutoWired
-    @ControllerAdvice
+Lombok = lib que diminui a verbosidade das classes
+	@Data              = gera os codigos utilizados por objetos, como getter e setter, toString, hashCode, equal e requiredArgsContructor
+	@Builder           = gera builder da classe
+	@SuperBuilder      = gera um builder com campos da superclasse
+	@NoArgsConstructor = gera um construtor sem parametros
+	@RequiredArgsConstructor = gera um contrutor com 1 parametro para cada campo que precise de algum tratamento
+	@AllArgsCnstructor = gera um contrutor com 1 parametro para cada campo existente na classe
+
+    @AutoWired        = faz a injeção de dependencias
+    @RestController   = Retorna o objeto e os dados sao gravados diretamente na resposta HTTP como Jsn ou XML
+    @Service          = indica que a classe é um componente de serviço na camada de negocios
+    @ControllerAdvice = permite lidar com excessoes em toda a aplicação
+    @Configuration    = indica que a classe declara um ou mais @Beans e devem ser processados pelo Spring
+    @Bean             = faz o metodo ser instanciado, montado e gerenciado pelo Spring
+
+
 	Desenvolver 1 operação de cadastro (POST)
 	Desenvolver 1 operação de atualização (PUT)
 	Desenvolver 1 operação de busca (GET)
@@ -16,6 +21,11 @@ Criar API conectando em um banco Mongo DB com Spring Data
 	Desenvolver 1 operação de delete que exclua objetos por um ou mais id
 	Desenvolver 1 operação que receba um Cookie simples
 	Tratar erros com @ExceptionHandlers
-	Versionamento de contratos
+
+	Versionamento de contratos = controle de versao por url para nao quebrar api de quem utiliza uma versao antiga do seu codigo
+
 	Serialização e desserialização de datas com Jackson no formato ISO
-	https://www.baeldung.com/spring-boot-formatting-json-dates
+
+	Acessos por referencia e copia = Object, matrizes, classes e interfaces guardam a referencia do local da memoria aonde o dado esta armazenado
+
+    Try with resource = nao utilizacao de Finally nem .close(), pois o java faz essa finalizacao automaticamente mesmo se ocorrer excessao

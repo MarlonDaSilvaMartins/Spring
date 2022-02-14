@@ -1,15 +1,13 @@
 package br.com.livraria.error;
 
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 import org.springframework.http.HttpStatus;
 
 import java.time.LocalDateTime;
 
 @NoArgsConstructor
-@Getter
-@Setter
+@Data
 public class ErrorResponse {
     private LocalDateTime data = LocalDateTime.now();
     private String status;
