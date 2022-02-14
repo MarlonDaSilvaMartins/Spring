@@ -18,7 +18,7 @@
 			[?]Tratar erros com @ExceptionHandlers
 			[x]Versionamento de contratos
 			[ ]Serialização e desserialização de datas com Jackson no formato ISO
-			[ ]https://www.baeldung.com/spring-boot-formatting-json-dates
+			[x]https://www.baeldung.com/spring-boot-formatting-json-dates
 
 			pesquisar sobre DTO
 
