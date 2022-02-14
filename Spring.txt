@@ -25,6 +25,7 @@ Lombok = lib que diminui a verbosidade das classes
 	Versionamento de contratos = controle de versao por url para nao quebrar api de quem utiliza uma versao antiga do seu codigo
 
 	Serialização e desserialização de datas com Jackson no formato ISO
+	= quando um objeto é tranformado em uma cadeia de bytes para que possa ser manipulado mais facil
 
 	Acessos por referencia e copia = Object, matrizes, classes e interfaces guardam a referencia do local da memoria aonde o dado esta armazenado
 

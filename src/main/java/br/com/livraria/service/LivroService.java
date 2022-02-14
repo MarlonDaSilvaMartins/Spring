@@ -32,8 +32,11 @@ public class LivroService{
 
     public Livro atualizar(String livroId, Livro livro){
         Livro livroUpdate = livroRepository.findById(livroId).orElseThrow(() -> new DataNotFoundException("Valor pesquisado não foi encontrado!"));
-        //Double preco = livro.getPreco().isNaN() ? livroUpdate.getPreco() : livro.getPreco();
-        double preco = livro.getPreco();
+        String nome = livro.getNome() == null ? livroUpdate.getNome() : livro.getNome();
+        livroUpdate.setNome(nome);
+        String autor = livro.getAutor() == null ? livroUpdate.getAutor() : livro.getAutor();
+        livroUpdate.setAutor(autor);
+        Double preco = livro.getPreco() == null ? livroUpdate.getPreco() : livro.getPreco();
         livroUpdate.setPreco(preco);
         return livroRepository.save(livroUpdate);
     }
