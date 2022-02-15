@@ -16,28 +16,23 @@ public class LivroController {
     LivroService livroService;
 
     @PostMapping("/v1/livro")
-    public Livro salvarLivro(@Valid @RequestBody LivroRequest livro){
-        return livroService.salvar(LivroMapper.mapperToImpl(livro));
+    public LivroResponse salvarLivro(@Valid @RequestBody LivroRequest livro){
+        return LivroMapper.livroToResponse(livroService.salvar(LivroMapper.mapperToImpl(livro)));
     }
 
     @GetMapping("/v1/livro")
-    public List<LivroRequest>pegarTodosLivros(){
-        return livroService.pegarTodosLivros().stream().map(livro -> LivroMapper.livroToRequest(livro)).collect(Collectors.toList());
+    public List<LivroResponse>pegarTodosLivros(){
+        return livroService.pegarTodosLivros().stream().map(livro -> LivroMapper.livroToResponse(livro)).collect(Collectors.toList());
     }
 
     @GetMapping("/v1/livro/{livroId}")
-    public LivroRequest pegarLivro(@PathVariable("livroId") String livroId){
-        return LivroMapper.livroToRequest(livroService.getLivroById(livroId));
-    }
-
-    @GetMapping("/v1/livroid")
-    public List<Livro>pegarTodosLivrosId(){
-        return livroService.pegarTodosLivrosId();
+    public LivroResponse pegarLivro(@PathVariable("livroId") String livroId){
+        return LivroMapper.livroToResponse(livroService.getLivroById(livroId));
     }
 
     @PutMapping("/v1/livro/{livroId}")
-    public Livro update(@PathVariable("livroId") String livroId, @Valid @RequestBody LivroRequest livro){
-        return livroService.atualizar(livroId,LivroMapper.mapperToImpl(livro));
+    public LivroResponse update(@PathVariable("livroId") String livroId, @Valid @RequestBody LivroRequest livro){
+        return LivroMapper.livroToResponse(livroService.atualizar(livroId,LivroMapper.mapperToImpl(livro)));
     }
 
     @DeleteMapping("/v1/livro/{livroId}")

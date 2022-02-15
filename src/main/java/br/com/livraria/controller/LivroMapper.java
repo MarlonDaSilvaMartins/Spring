@@ -11,8 +11,9 @@ public class LivroMapper {
                 .build();
     }
 
-    public static LivroRequest livroToRequest(Livro livro){
-        return LivroRequest.builder()
+    public static LivroResponse livroToResponse(Livro livro){
+        return LivroResponse.builder()
+                .livroId(livro.getLivroId())
                 .nome(livro.getNome())
                 .autor(livro.getAutor())
                 .preco(livro.getPreco())
