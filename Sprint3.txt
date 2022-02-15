@@ -10,12 +10,11 @@
 		 (https://start.spring.io/)
 			[x]Desenvolver 1 operação de cadastro (POST)
 			[x]Desenvolver 1 operação de atualização (PUT)
-			[x]Desenvolver 1 operação de atualização (PATCH)
 			[x]Desenvolver 1 operação de busca (GET)
 			[x]Desenvolver 1 operação de delete (DELETE)
 			[x]Desenvolver 1 operação de delete que exclua objetos por um ou mais id
 			[x]Desenvolver 1 operação que receba um Cookie simples
-			[?]Tratar erros com @ExceptionHandlers
+			[x]Tratar erros com @ExceptionHandlers
 			[x]Versionamento de contratos
 			[x]Serialização e desserialização de datas com Jackson no formato ISO
 			[x]https://www.baeldung.com/spring-boot-formatting-json-dates
@@ -25,7 +24,6 @@
 			[?] Acessos por referencia e copia.
 			[x] Try with resource
 
-			patch sem utilizar livroRequest?
 
 Lombok
 http://stevenmwesigwa.com/tutorials/project-lombok/3/how-to-use-getter-and-setter-annotations-with-project-lombok

@@ -40,11 +40,6 @@ public class LivroController {
         return livroService.atualizar(livroId,LivroMapper.mapperToImpl(livro));
     }
 
-    @PatchMapping("/v1/livro/{livroId}")
-    public Livro updateParcial(@PathVariable("livroId") String livroId, @RequestBody Livro livro){
-        return livroService.atualizar(livroId,livro);
-    }
-
     @DeleteMapping("/v1/livro/{livroId}")
     public void deletarLivro(@PathVariable("livroId") String livroId){
         livroService.deletar(livroId);
