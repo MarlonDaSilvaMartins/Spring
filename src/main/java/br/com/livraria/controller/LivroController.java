@@ -5,7 +5,6 @@ import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import br.com.livraria.model.Livro;
 import br.com.livraria.service.LivroService;
 
 import javax.validation.Valid;
@@ -22,7 +21,7 @@ public class LivroController {
 
     @GetMapping("/v1/livro")
     public List<LivroResponse>pegarTodosLivros(){
-        return livroService.pegarTodosLivros().stream().map(livro -> LivroMapper.livroToResponse(livro)).collect(Collectors.toList());
+        return livroService.pegarTodosLivros().stream().map(LivroMapper::livroToResponse).collect(Collectors.toList());
     }
 
     @GetMapping("/v1/livro/{livroId}")

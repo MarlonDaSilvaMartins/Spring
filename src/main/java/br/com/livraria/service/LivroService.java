@@ -26,10 +26,6 @@ public class LivroService{
         return livroRepository.findById(livroId).get();
     }
 
-    public List<Livro> pegarTodosLivrosId(){
-        return livroRepository.findAll();
-    }
-
     public Livro atualizar(String livroId, Livro livroUpdate){
         Livro livroSalvo = livroRepository.findById(livroId).orElseThrow(() -> new DataNotFoundException("Valor pesquisado não foi encontrado!"));
         livroUpdate.setLivroId(livroSalvo.getLivroId());
