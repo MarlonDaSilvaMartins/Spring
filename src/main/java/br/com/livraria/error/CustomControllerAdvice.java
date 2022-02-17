@@ -14,15 +14,14 @@ import java.io.StringWriter;
 
 @ControllerAdvice
 public class CustomControllerAdvice {
-
+    //TODO trocar de ResponseEntity para ErrorResponse
     @ExceptionHandler(DataNotFoundException.class)
     public ResponseEntity<ErrorResponse> dataNotFoundException(DataNotFoundException exception){
-        HttpStatus status = HttpStatus.NOT_FOUND;
         StringWriter stringWriter = new StringWriter();
         PrintWriter printWriter = new PrintWriter(stringWriter);
         exception.printStackTrace(printWriter);
         String stackTrace = stringWriter.toString();
-        return new ResponseEntity<>(new ErrorResponse(status,exception.getMessage(),stackTrace),status);
+        return new ResponseEntity<>(new ErrorResponse(HttpStatus.NOT_FOUND,exception.getMessage(),stackTrace),HttpStatus.NOT_FOUND);
     }
 
     @ExceptionHandler(HttpMessageNotReadableException.class)
