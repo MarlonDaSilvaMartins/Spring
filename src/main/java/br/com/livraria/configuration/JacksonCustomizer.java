@@ -1,4 +1,4 @@
-package br.com.livraria;
+package br.com.livraria.configuration;
 
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
@@ -10,8 +10,8 @@ import java.time.format.DateTimeFormatter;
 
 @Configuration
 public class JacksonCustomizer {
-    private static final String dateFormat = "yyyy-MM-dd";
-    private static final String dateTimeFormat = "yyyy-MM-dd HH:mm:ss";
+    private static final String dateFormat = "dd-MM-yyyy";
+    private static final String dateTimeFormat = "dd-MM-yyyy HH:mm:ss";
 
     @Bean
     public Jackson2ObjectMapperBuilderCustomizer jsonCustomizer() {

@@ -1,6 +1,8 @@
 package br.com.livraria.error;
 
 
+import com.fasterxml.jackson.databind.exc.InvalidFormatException;
+import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.http.HttpStatus;
@@ -14,7 +16,7 @@ import java.io.StringWriter;
 public class CustomControllerAdvice {
 
     @ExceptionHandler(DataNotFoundException.class)
-    public ResponseEntity<ErrorResponse> handleCustomDataNotFoundException(Exception exception){
+    public ResponseEntity<ErrorResponse> dataNotFoundException(DataNotFoundException exception){
         HttpStatus status = HttpStatus.NOT_FOUND;
         StringWriter stringWriter = new StringWriter();
         PrintWriter printWriter = new PrintWriter(stringWriter);
@@ -23,8 +25,13 @@ public class CustomControllerAdvice {
         return new ResponseEntity<>(new ErrorResponse(status,exception.getMessage(),stackTrace),status);
     }
 
+    @ExceptionHandler(HttpMessageNotReadableException.class)
+    public ResponseEntity<ErrorResponse> dataInvalidaException(HttpMessageNotReadableException exception){
+        return new ResponseEntity<>(new ErrorResponse(HttpStatus.BAD_REQUEST, "Valor incorreto inserido"),HttpStatus.BAD_REQUEST);
+    }
+
     @ExceptionHandler(MethodArgumentNotValidException.class)
-    public ResponseEntity<ErrorResponse> camposEmBrancoException(Exception exception){
+    public ResponseEntity<ErrorResponse> camposEmBrancoException(MethodArgumentNotValidException exception){
         return new ResponseEntity<>(new ErrorResponse(HttpStatus.BAD_REQUEST, "Campo obrigatorio não preenchido"),HttpStatus.BAD_REQUEST);
     }
 

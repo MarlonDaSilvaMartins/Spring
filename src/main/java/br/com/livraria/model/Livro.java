@@ -5,6 +5,8 @@ import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.time.LocalDate;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
@@ -15,5 +17,6 @@ public class Livro {
     private String livroId;
     private String nome;
     private String autor;
+    private LocalDate data;
     private Double preco;
 }

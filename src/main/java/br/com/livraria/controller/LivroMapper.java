@@ -7,6 +7,7 @@ public class LivroMapper {
         return Livro.builder()
                 .nome(livroRequest.getNome())
                 .autor(livroRequest.getAutor())
+                .data(livroRequest.getData())
                 .preco(livroRequest.getPreco())
                 .build();
     }
@@ -16,6 +17,7 @@ public class LivroMapper {
                 .livroId(livro.getLivroId())
                 .nome(livro.getNome())
                 .autor(livro.getAutor())
+                .data(livro.getData())
                 .preco(livro.getPreco())
                 .build();
     }

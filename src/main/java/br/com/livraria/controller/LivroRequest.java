@@ -6,6 +6,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import java.time.LocalDate;
 
 
 @NoArgsConstructor
@@ -18,6 +19,8 @@ public class LivroRequest {
     private String nome;
     @NotEmpty(message = "Autor vazio")
     private String autor;
+    @NotNull(message = "Data de lançamento vazia")
+    private LocalDate data;
     @NotNull(message = "Valor vazio")
     @DecimalMin(value = "0.1",message = "valor minimo de 0.10")
     private Double preco;
