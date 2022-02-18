@@ -17,21 +17,21 @@ import java.time.LocalDateTime;
 public class CustomControllerAdvice {
     @ExceptionHandler(DataNotFoundException.class)
     public ResponseEntity<ErrorResponse> dataNotFoundException(DataNotFoundException exception){
-        return new ResponseEntity<>(new ErrorResponse(LocalDateTime.now(), HttpStatus.NOT_FOUND.value(), HttpStatus.NOT_FOUND,exception.getMessage()),HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>(new ErrorResponse(HttpStatus.NOT_FOUND,exception.getMessage()),HttpStatus.NOT_FOUND);
     }
 
     @ExceptionHandler(HttpMessageNotReadableException.class)
     public ResponseEntity<ErrorResponse> dataInvalidaException(HttpMessageNotReadableException exception){
-        return new ResponseEntity<>(new ErrorResponse(LocalDateTime.now(), HttpStatus.BAD_REQUEST.value(), HttpStatus.BAD_REQUEST, "Valor incorreto inserido"),HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>(new ErrorResponse(HttpStatus.BAD_REQUEST, "Valor incorreto inserido"),HttpStatus.NOT_FOUND);
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<ErrorResponse> camposEmBrancoException(MethodArgumentNotValidException exception){
-        return new ResponseEntity<>(new ErrorResponse(LocalDateTime.now(), HttpStatus.BAD_REQUEST.value(), HttpStatus.BAD_REQUEST, "Campo obrigatorio não preenchido"),HttpStatus.BAD_REQUEST);
+        return new ResponseEntity<>(new ErrorResponse(HttpStatus.BAD_REQUEST, "Campo obrigatorio não preenchido"),HttpStatus.BAD_REQUEST);
     }
 
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ErrorResponse> falhaConexaoBancoException(Exception exception){
-        return new ResponseEntity<>(new ErrorResponse(LocalDateTime.now(), HttpStatus.INTERNAL_SERVER_ERROR.value(), HttpStatus.INTERNAL_SERVER_ERROR,"Falha ao conectar"),HttpStatus.INTERNAL_SERVER_ERROR);
+        return new ResponseEntity<>(new ErrorResponse(HttpStatus.INTERNAL_SERVER_ERROR,"Falha ao conectar"),HttpStatus.INTERNAL_SERVER_ERROR);
     }
 }
