@@ -42,9 +42,4 @@ public class BookService {
             bookRepository.deleteById(bookId);
         }
     }
-
-    public String readCookie(String name){
-        return "My name is " + name;
-    }
-
 }
