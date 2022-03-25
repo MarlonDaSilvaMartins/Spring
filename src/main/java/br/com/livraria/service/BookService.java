@@ -31,15 +31,17 @@ public class BookService {
         return bookRepository.save(bookUpdate);
     }
 
-    public void delete(String bookId){
+    public String delete(String bookId){
         bookRepository.findById(bookId).orElseThrow(() -> new DataNotFoundException(bookId+" not found"));
         bookRepository.deleteById(bookId);
+        return "book deleted";
     }
 
-    public void deleteMany(List<String> book){
+    public String deleteMany(List<String> book){
         for(String bookId : book){
             bookRepository.findById(bookId).orElseThrow(() -> new DataNotFoundException(bookId+" not found"));
             bookRepository.deleteById(bookId);
         }
+        return "book deleted";
     }
 }

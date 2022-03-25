@@ -45,14 +45,14 @@ public class BookController {
 
     @DeleteMapping("/{bookId}")
     @ResponseStatus(HttpStatus.OK)
-    public void deleteBook(@PathVariable("bookId") String bookId){
-        bookService.delete(bookId);
+    public String deleteBook(@PathVariable("bookId") String bookId){
+        return bookService.delete(bookId);
     }
 
     @DeleteMapping()
     @ResponseStatus(HttpStatus.OK)
-    public void deleteMany(@RequestParam("bookId") List<String> bookId){
-        bookService.deleteMany(bookId);
+    public String deleteMany(@RequestParam("bookId") List<String> bookId){
+        return bookService.deleteMany(bookId);
     }
 
     @GetMapping("/readCookie")
