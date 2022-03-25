@@ -1,8 +1,8 @@
-package br.com.livraria.controller.mapper;
+package br.com.livraria.model.book.mapper;
 
-import br.com.livraria.controller.model.request.BookRequest;
-import br.com.livraria.controller.model.response.BookResponse;
-import br.com.livraria.model.Book;
+import br.com.livraria.model.book.request.BookRequest;
+import br.com.livraria.model.book.response.BookResponse;
+import br.com.livraria.model.book.Book;
 import lombok.*;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)

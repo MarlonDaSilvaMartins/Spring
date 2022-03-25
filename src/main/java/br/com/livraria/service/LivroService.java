@@ -3,7 +3,7 @@ package br.com.livraria.service;
 import java.util.List;
 
 import br.com.livraria.error.DataNotFoundException;
-import br.com.livraria.model.Book;
+import br.com.livraria.model.book.Book;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import br.com.livraria.repository.BookRepository;

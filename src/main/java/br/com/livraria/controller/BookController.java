@@ -1,8 +1,8 @@
 package br.com.livraria.controller;
 
-import br.com.livraria.controller.mapper.BookMapper;
-import br.com.livraria.controller.model.request.BookRequest;
-import br.com.livraria.controller.model.response.BookResponse;
+import br.com.livraria.model.book.mapper.BookMapper;
+import br.com.livraria.model.book.request.BookRequest;
+import br.com.livraria.model.book.response.BookResponse;
 import br.com.livraria.service.LivroService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;

@@ -1,4 +1,4 @@
-package br.com.livraria.controller.model.request;
+package br.com.livraria.model.book.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

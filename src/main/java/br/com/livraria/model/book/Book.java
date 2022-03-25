@@ -1,6 +1,8 @@
-package br.com.livraria.controller.model.response;
+package br.com.livraria.model.book;
+
 
 import lombok.*;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDate;
@@ -10,7 +12,8 @@ import java.time.LocalDate;
 @Builder
 @Data
 @Document
-public class BookResponse {
+public class Book {
+    @Id
     private String bookId;
     private String name;
     private String author;
