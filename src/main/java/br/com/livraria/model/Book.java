@@ -12,11 +12,11 @@ import java.time.LocalDate;
 @Builder
 @Data
 @Document
-public class Livro {
+public class Book {
     @Id
-    private String livroId;
-    private String nome;
-    private String autor;
-    private LocalDate data;
-    private Double preco;
+    private String bookId;
+    private String name;
+    private String author;
+    private LocalDate date;
+    private Double price;
 }

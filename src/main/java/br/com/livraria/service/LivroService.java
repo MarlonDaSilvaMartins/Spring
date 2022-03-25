@@ -3,49 +3,48 @@ package br.com.livraria.service;
 import java.util.List;
 
 import br.com.livraria.error.DataNotFoundException;
-import org.springframework.beans.factory.annotation.Autowired;
+import br.com.livraria.model.Book;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-import br.com.livraria.model.Livro;
-import br.com.livraria.repository.LivroRepository;
+import br.com.livraria.repository.BookRepository;
 
+@AllArgsConstructor
 @Service
 public class LivroService{
-    @Autowired
-    LivroRepository livroRepository;
+    BookRepository bookRepository;
 
-    public Livro salvar(Livro livro){
-        return livroRepository.save(livro);
+    public Book save(Book book){
+        return bookRepository.save(book);
     }
 
-    public List<Livro> pegarTodosLivros(){
-        return livroRepository.findAll();
+    public List<Book> getAllBooks(){
+        return bookRepository.findAll();
     }
 
-    public Livro getLivroById(String livroId){
-        livroRepository.findById(livroId).orElseThrow(() -> new DataNotFoundException("Valor pesquisado não foi encontrado!"));
-        return livroRepository.findById(livroId).get();
+    public Book getBookById(String bookId){
+        return bookRepository.findById(bookId).orElseThrow(() -> new DataNotFoundException(bookId+" not found"));
     }
 
-    public Livro atualizar(String livroId, Livro livroUpdate){
-        Livro livroSalvo = livroRepository.findById(livroId).orElseThrow(() -> new DataNotFoundException("Valor pesquisado não foi encontrado!"));
-        livroUpdate.setLivroId(livroSalvo.getLivroId());
-        return livroRepository.save(livroUpdate);
+    public Book update(String bookId, Book bookUpdate){
+        Book bookSaved = bookRepository.findById(bookId).orElseThrow(() -> new DataNotFoundException(bookId+" not found"));
+        bookUpdate.setBookId(bookSaved.getBookId());
+        return bookRepository.save(bookUpdate);
     }
 
-    public void deletar(String livroId){
-        livroRepository.findById(livroId).orElseThrow(() -> new DataNotFoundException("Valor pesquisado não foi encontrado!"));
-        livroRepository.deleteById(livroId);
+    public void delete(String bookId){
+        bookRepository.findById(bookId).orElseThrow(() -> new DataNotFoundException(bookId+" not found"));
+        bookRepository.deleteById(bookId);
     }
 
-    public void deletarMaisDeUm(List<String> livro){
-        for(String livroId : livro){
-            livroRepository.findById(livroId).orElseThrow(() -> new DataNotFoundException("Valor "+livroId+" não foi encontrado!"));
-            livroRepository.deleteById(livroId);
+    public void deleteMany(List<String> book){
+        for(String bookId : book){
+            bookRepository.findById(bookId).orElseThrow(() -> new DataNotFoundException(bookId+" not found"));
+            bookRepository.deleteById(bookId);
         }
     }
 
-    public String lerCookie(String nome){
-        return "Meu nome é " + nome;
+    public String readCookie(String name){
+        return "My name is " + name;
     }
 
 }//livroService
