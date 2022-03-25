@@ -10,7 +10,7 @@ import br.com.livraria.repository.BookRepository;
 
 @AllArgsConstructor
 @Service
-public class LivroService{
+public class BookService {
     BookRepository bookRepository;
 
     public Book save(Book book){
@@ -47,4 +47,4 @@ public class LivroService{
         return "My name is " + name;
     }
 
-}//livroService
+}

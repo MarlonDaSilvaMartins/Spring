@@ -88,7 +88,7 @@ public class CustomControllerAdvice {
 
     @ExceptionHandler(Exception.class)
     @ResponseStatus(INTERNAL_SERVER_ERROR)
-    public ErrorResponse falhaConexaoBancoException(Exception exception){
+    public ErrorResponse handleException(Exception exception){
         return ErrorResponse.builder()
                 .timestamp(LocalDateTime.now())
                 .error(List.of(ErrorObject.builder()
