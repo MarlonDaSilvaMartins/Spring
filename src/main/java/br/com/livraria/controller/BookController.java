@@ -26,13 +26,11 @@ public class BookController {
     }
 
     @GetMapping()
-    @ResponseStatus(HttpStatus.OK)
     public List<BookResponse>getAllBooks(){
         return bookService.getAllBooks().stream().map(BookMapper::bookToResponse).toList();
     }
 
     @GetMapping("/{bookId}")
-    @ResponseStatus(HttpStatus.OK)
     public BookResponse getBook(@PathVariable("bookId") String bookId){
         return BookMapper.bookToResponse(bookService.getBookById(bookId));
     }
@@ -44,19 +42,16 @@ public class BookController {
     }
 
     @DeleteMapping("/{bookId}")
-    @ResponseStatus(HttpStatus.OK)
     public String deleteBook(@PathVariable("bookId") String bookId){
         return bookService.delete(bookId);
     }
 
     @DeleteMapping()
-    @ResponseStatus(HttpStatus.OK)
     public String deleteMany(@RequestParam("bookId") List<String> bookId){
         return bookService.deleteMany(bookId);
     }
 
     @GetMapping("/readCookie")
-    @ResponseStatus(HttpStatus.OK)
     public String readCookie(@CookieValue("theme")String theme){
         return "theme: "+theme;
     }
