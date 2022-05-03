@@ -69,6 +69,8 @@ https://i.stack.imgur.com/i4xnP.png
 Formatting JSON Dates in Spring Boot | Baeldung
 https://www.baeldung.com/spring-boot-formatting-json-dates
 
+
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/DELETE
 	rinaldodev
 
 

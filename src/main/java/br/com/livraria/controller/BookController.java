@@ -36,19 +36,14 @@ public class BookController {
     }
 
     @PutMapping("/{bookId}")
-    @ResponseStatus(HttpStatus.ACCEPTED)
     public BookResponse updateBook(@PathVariable("bookId") String bookId, @Valid @RequestBody BookRequest bookRequest){
         return BookMapper.bookToResponse(bookService.update(bookId, BookMapper.requestToBook(bookRequest)));
     }
 
-    @DeleteMapping("/{bookId}")
-    public String deleteBook(@PathVariable("bookId") String bookId){
-        return bookService.delete(bookId);
-    }
-
     @DeleteMapping()
-    public String deleteMany(@RequestParam("bookId") List<String> bookId){
-        return bookService.deleteMany(bookId);
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deleteMany(@RequestParam("bookId") List<String> bookId){
+        bookService.delete(bookId);
     }
 
     @GetMapping("/readCookie")

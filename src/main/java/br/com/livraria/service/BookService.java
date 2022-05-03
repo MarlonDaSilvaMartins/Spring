@@ -31,17 +31,7 @@ public class BookService {
         return bookRepository.save(bookUpdate);
     }
 
-    public String delete(String bookId){
-        bookRepository.findById(bookId).orElseThrow(() -> new DataNotFoundException(bookId+" not found"));
-        bookRepository.deleteById(bookId);
-        return "book deleted";
-    }
-
-    public String deleteMany(List<String> book){
-        for(String bookId : book){
-            bookRepository.findById(bookId).orElseThrow(() -> new DataNotFoundException(bookId+" not found"));
-            bookRepository.deleteById(bookId);
-        }
-        return "book deleted";
+    public void delete(List<String> book){
+        bookRepository.deleteAllById(book);
     }
 }
